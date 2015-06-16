@@ -1,0 +1,26 @@
+extends layout
+
+block content
+   .inner.cover
+      form.form-horizontal
+         fieldset
+
+            legend Sign in with your gamecode credentials
+
+            .form-group
+               label.col-md-4.control-label(for='gamecode') Game Code ID
+
+               .col-md-5
+                  input#gamecode.form-control.input-md(name='gamecode', type='text', placeholder='Game Code Id')
+            .form-group
+               label.col-md-4.control-label(for='password') Password
+
+               .col-md-5
+                  input#password.form-control.input-md(name='password', type='password', placeholder='******')
+
+            .form-group
+               label.col-md-4.control-label(for='submit')
+
+               .col-md-4
+                  button#submit.btn.btn-primary(name='submit') Sign in
+
