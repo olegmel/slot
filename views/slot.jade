@@ -1,51 +1,38 @@
 extends layout
 
 block content
-   h2 Output
+   .row
+      h2 Output
 
-   h3.text-center.text-danger You {win || loose}!
+      h3.text-center.text-danger You {win || loose}!
 
-   .col-md-6.result-block-table
-      table.table.table-condensed
-         tr
-            td
-               h2 {i}
-            td
-               h2 {i}
-            td
-               h2 {i}
-            td
-               h2 {i}
-
-            td
-               h2 {i}
+      .col-md-6.result-block-table
+         table.table.table-condensed
+            tr
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
 
             tr
-               td
-                  h2 {i}
-               td
-                  h2 {i}
-               td
-                  h2 {i}
-               td
-                  h2 {i}
-               td
-                  h2 {i}
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
 
             tr
-               td
-                  h2 {i}
-               td
-                  h2 {i}
-               td
-                  h2 {i}
-               td
-                  h2 {i}
-               td
-                  h2 {i}
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
+               td: h2 {i}
 
-   .col-md-6.result-block-info
-      h3 Result:
 
-      p {Some result info}
+
+      .col-md-6.result-block-info
+         h3 Result:
+
+         p {Some result info}
 

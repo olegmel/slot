@@ -5,6 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var gc = require("./models/gamecodes");
+var arr = [];
+
+arr = gc.getGamecodes();
+
+
+//console.log(ref);
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 

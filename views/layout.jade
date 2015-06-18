@@ -1,23 +1,18 @@
-doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/css/style.css')
-    link(rel='stylesheet', href='../bower_components/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-  body
+include partials/header
     nav.navbar.navbar-inverse.navbar-fixed-top
-      a.navbar-brand
-        i.fa.fa-gamepad  Slot7 Prototype
+      a.navbar-brand: i.fa.fa-gamepad  Slot7 Prototype
       span hello
 
-    .container
-      .col-md-12
+    .container-fluid.offset-top-10
+      .col-md-2.col-lg-2.sidebar
+        include partials/sidebar-menu
+
+      .col-md-8.col-lg-8
         block content
 
-    .mastfoot
-      .inner
-        p Slot games prototypes
+      .col-md-2.col-lg-2.sidebar
+        include partials/stats-widget
 
-    script(src='../bower_components/jquery/dist/jquery.min.js')
-    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
+
+      include partials/footer
+

@@ -1,6 +1,4 @@
-extends layout
-
-block content
+include partials/header
    .inner.cover
       form.form-horizontal
          fieldset
@@ -23,4 +21,6 @@ block content
 
                .col-md-4
                   button#submit.btn.btn-primary(name='submit') Sign in
+
+include partials/footer
 
