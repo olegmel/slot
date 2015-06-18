@@ -4,8 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var gc = require("./models/gamecodes");
+var gc = require('./models/gamecodes');
 var arr = [];
 
 arr = gc.getGamecodes();

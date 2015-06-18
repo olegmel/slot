@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('slotPrototype:server');
 var http = require('http');
-
+var gc = require('../models/gamecodes');
 /**
  * Get port from environment and store in Express.
  */
