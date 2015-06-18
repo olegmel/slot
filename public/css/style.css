@@ -40,3 +40,9 @@ div.sidebar-wrap {
 .offset-top-10 {
   margin-top: 10px;
 }
+
+.stats-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
