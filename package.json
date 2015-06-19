@@ -16,7 +16,7 @@
     "bower": "*",
     "async": "*",
     "firebase": "*",
-    "edge": "*"
+    "edge": "*",
     "connect-flash": "*",
     "cookie-parser": "*",
     "express-session": "*",
