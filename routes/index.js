@@ -1,15 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var gc = require("../models/gamecodes");
-<<<<<<< HEAD
-=======
 var async = require('async');
 var crypto = require("../controllers/crypto");
 var q = require("q");
 var gcController = require("../controllers/gamecodes");
 var middlewares = require("../middlewares");
->>>>>>> 894a8dc143102226fc01e58404eed4793c018c50
-
 //Route-handlers will be exported in single files. Everything that exists now is just for test and will be changed!
 
 router.get('/', middlewares.isAuth, function(req, res, next) {
@@ -21,13 +17,12 @@ router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
-<<<<<<< HEAD
 router.get('/code', function(req, res, next) {
   res.render('code');
 });
 
 router.get('/slot', function(req, res, next) {
-=======
+
 router.post('/login', function(req, res, next) {
     gc.getGamecodeByLogin(req.body.gamecode);
 
@@ -45,7 +40,6 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/slot', middlewares.isAuth, function(req, res, next) {
->>>>>>> 894a8dc143102226fc01e58404eed4793c018c50
   res.render('slot');
 });
 
