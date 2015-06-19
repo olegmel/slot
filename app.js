@@ -8,6 +8,7 @@ var gc = require('./models/gamecodes');
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var edge = require('edge');
 var arr = [];
 
 

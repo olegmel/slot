@@ -23,24 +23,24 @@ router.get('/code', function(req, res, next) {
 
 router.get('/slot', function(req, res, next) {
 
-router.post('/login', function(req, res, next) {
-    gc.getGamecodeByLogin(req.body.gamecode);
+    router.post('/login', function (req, res, next) {
+        gc.getGamecodeByLogin(req.body.gamecode);
 
-    if(gcController.comparePasswords(req.body.password, gc.gamecodeObject.password)){
-      res.send(gc);
-      req.session.gamecode = gc.gamecodeObject;
-      console.log(req.session);
-    } else {
-      res.send('Gamecode or password isn\'t correct');
-    }
+        if (gcController.comparePasswords(req.body.password, gc.gamecodeObject.password)) {
+            res.send(gc);
+            req.session.gamecode = gc.gamecodeObject;
+            console.log(req.session);
+        } else {
+            res.send('Gamecode or password isn\'t correct');
+        }
 
-  res.status(200).end();
+        res.status(200).end();
 
 
+    });
 });
 
 router.get('/slot', middlewares.isAuth, function(req, res, next) {
   res.render('slot');
 });
-
 module.exports = router;
