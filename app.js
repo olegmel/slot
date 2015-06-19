@@ -4,11 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var flash = require('connect-flash');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 
-var gc = require("./models/gamecodes");
 var arr = [];
 
-arr = gc.getGamecodes();
 
 
 //console.log(ref);
@@ -28,6 +29,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(session({
+  secret: 'oi928%@21jdfdsJd',
+  resave: true,
+  saveUninitialized: true
+}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
