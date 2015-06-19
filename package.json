@@ -16,6 +16,14 @@
     "bower": "*",
     "async": "*",
     "firebase": "*",
+<<<<<<< HEAD
     "edge": "*"
+=======
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "express-session": "*",
+    "crypto-js": "*",
+    "q": "*"
+>>>>>>> 894a8dc143102226fc01e58404eed4793c018c50
   }
 }
