@@ -43,4 +43,5 @@ router.get('/slot', function(req, res, next) {
 router.get('/slot', middlewares.isAuth, function(req, res, next) {
   res.render('slot');
 });
+
 module.exports = router;
