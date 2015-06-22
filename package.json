@@ -17,6 +17,7 @@
     "async": "*",
     "firebase": "*",
     "edge": "*",
+    "node-gyp": "*",
     "connect-flash": "*",
     "cookie-parser": "*",
     "express-session": "*",
