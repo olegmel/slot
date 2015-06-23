@@ -1,16 +1,15 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+//var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
-var cookieParser = require('cookie-parser');
+
 var session = require('express-session');
+var FileStore = require('session-file-store')(session);
 
 var arr = [];
-
-
 
 //console.log(ref);
 
@@ -32,6 +31,7 @@ app.use(cookieParser());
 
 app.use(session({
   secret: 'oi928%@21jdfdsJd',
+  store: new FileStore,
   resave: true,
   saveUninitialized: true
 }));

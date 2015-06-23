@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "bootstrap": "*",
-    "jquery": "*"
+    "jquery": "*",
+    "firebase": "~2.2.7"
   }
 }

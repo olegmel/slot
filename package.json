@@ -20,6 +20,15 @@
     "cookie-parser": "*",
     "express-session": "*",
     "crypto-js": "*",
-    "q": "*"
+    "session-file-store": "*",
+    "gulp": "*",
+    "gulp-watch": "*",
+    "gulp-nodemon": "*",
+    "gulp-livereload": "*",
+    "gulp-concat": "*",
+    "gulp-minify-css": "*",
+    "gulp-uglify": "*",
+    "browser-sync": "*",
+    "exec.it": "*"
   }
 }

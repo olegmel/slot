@@ -1,14 +1,15 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: underline;
 }
 
 div.result-block-info {
-  background-color: #e3e3e3;
+  background-color: #e3e3e2;
 }
 
 div.result-block-table {
@@ -21,7 +22,7 @@ div.sidebar-wrap {
 }
 
 .stats-widget {
-
+  color: #000;
 }
 
 .stats-widget p {

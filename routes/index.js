@@ -1,16 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var gc = require("../models/gamecodes");
-var async = require('async');
-var crypto = require("../controllers/crypto");
-var q = require("q");
+
 var gcController = require("../controllers/gamecodes");
+var slotAlgo = require("../run.js");
+
 var middlewares = require("../middlewares");
 
-//Route-handlers will be exported in single files. Everything that exists now is just for test and will be changed!
-
 router.get('/', middlewares.isAuth, function(req, res, next) {
-  arr = gc.getGamecodes();
   res.render('slot', { title: 'Express' });
 });
 
@@ -19,23 +16,34 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
-    gc.getGamecodeByLogin(req.body.gamecode);
+    gc.getGamecodeByLogin(req.body.gamecode, function(err, data) {
+        if(err) {
+            throw err;
+        }
 
-    if(gcController.comparePasswords(req.body.password, gc.gamecodeObject.password)){
-      res.send(gc);
-      req.session.gamecode = gc.gamecodeObject;
-      console.log(req.session);
-    } else {
-      res.send('Gamecode or password isn\'t correct');
-    }
+        if(data !== null && gcController.comparePasswords(req.body.password, data.password)){
+            req.session.gamecode = data;
+            res.send(data);
 
-  res.status(200).end();
-
-
+            res.status(200).end();
+        } else {
+            res.status(404).end('Gamecode or password isn\'t correct');
+        }
+    });
 });
 
 router.get('/slot', middlewares.isAuth, function(req, res, next) {
-  res.render('slot');
+  res.render('slot', req.session.gamecode);
+});
+
+router.get('/algo', middlewares.isAuth, function(req, res, next) {
+    slotAlgo(function(err, result) {
+        if(err) {
+            throw err;
+        }
+
+        res.status(200).end(result);
+    });
 });
 
 module.exports = router;
