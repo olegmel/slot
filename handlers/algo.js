@@ -1,4 +1,5 @@
 var slotAlgo = require("../run.js");
+var AlgoCtrl = require("../controllers/algo.js");
 
 module.exports.getHandler = function(req, res, next) {
     slotAlgo(function(err, result) {
@@ -6,6 +7,9 @@ module.exports.getHandler = function(req, res, next) {
             throw err;
         }
 
-        res.status(200).end(result);
+        var response = new AlgoCtrl(result).prepareResponse();
+        console.log(response);
+
+        res.status(200).end(response);
     });
 };

@@ -6,18 +6,20 @@ module.exports.getHandler = function(req, res, next) {
 };
 
 module.exports.postHandler = function(req, res, next) {
-    gc.getGamecodeByLogin(req.body.gamecode, function(err, data) {
+    var gamecode = new gcController(req.body.gamecode, req.body.password);
+
+    gamecode.getObject(function(err,  data) {
         if(err) {
             throw err;
         }
 
-        if(data !== null && gcController.comparePasswords(req.body.password, data.password)){
+        if(data) {
             req.session.gamecode = data;
-            res.send(data);
 
+            res.send(data);
             res.status(200).end();
         } else {
-            res.status(404).end('Gamecode or password isn\'t correct');
+            res.status(403).end('Gamecode or password isn\'t correct');
         }
     });
 };

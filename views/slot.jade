@@ -1,38 +1,24 @@
 extends layout
 
 block content
-   .row
-      h2= agentId
+   .row.play-zone
+      p This is just a preview to show algo works and parse correct
+      p There's no sync with Firebase yet
 
-      h3.text-center.text-danger You {win || loose}!
+      //h3.text-center.text-danger You {win || loose}!
 
-      .col-md-6.result-block-table
-         table.table.table-condensed
-            tr
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
+      .col-md-4.col-md-offset-4
+         button.btn-spin.action-button.shadow.animate.blue
+            span  ***SPIN***
 
-            tr
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
+   .container
+      .row.result-wrap
+         h1.win-str
 
-            tr
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
-               td: h2 {i}
+         .col-md-6.result-numbers
+
+         .col-md-6.result-stats
 
 
 
-      .col-md-6.result-block-info
-         h3 Result:
-
-         p {Some result info}
 

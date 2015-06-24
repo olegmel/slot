@@ -34,7 +34,7 @@ gulp.task('views', function() {
 });
 
 gulp.task('demon', function () {
-    nodemon({script: './bin/www', ignored: ['gulpfile.js', 'public/**'], ext: 'js jade'}).on('change', ['scripts', 'views']);
+    nodemon({script: './bin/www', ignored: ['gulpfile.js', 'public/**'], ext: 'css js jade'}).on('change', ['scripts', 'views', 'css']);
 });
 
 gulp.task('watch', function() {
