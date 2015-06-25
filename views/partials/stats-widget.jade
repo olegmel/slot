@@ -1,23 +1,23 @@
-.sidebar-wrap.stats-widget
-   .panel.panel-slot
-      .panel-heading
-         p.text-center Game code stats
-            span= agentId
+if gamecode
+    .sidebar-wrap.stats-widget
+       .panel.panel-slot
+          .panel-heading
+             p.text-center Game code stats
+                span= gamecode.agentId
 
-      .panel-body
-          ul.stats-ul
-             li
-               strong Creation Date:
-               span= createdOn
-             li
-               strong Original Value:
-               span= originalValue
+          .panel-body
+              ul.stats-ul
+                 li
+                   strong Creation Date:
+                   span.gc-createdOn= gamecode.createdOn
+                 li
+                   strong Original Value:
+                   span.gc-originalValue= gamecode.originalValue
 
-             li
-               strong Current Value:
-               span=  currentValue
+                 li
+                   strong Current Value:
+                   span.gc-currentValue=  gamecode.currentValue
 
-             li
-               strong Balance:
-               span= balance
-                  i.fa.fa-caret-down
+                 li
+                   strong Balance:
+                   span.gc-balance= gamecode.balance

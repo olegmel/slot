@@ -9,9 +9,11 @@ function GamecodesCtrl(gamecode, password) {
         var result = {};
 
         result.createdOn = new Date(gcObject.createdOn);
-        result.originalValue = gcObject.originalValue / 100;
-        result.currentValue = gcObject.currentValue / 100;
+        result.originalValue = gcObject.originalValue;
+        result.currentValue = gcObject.currentValue;
         result.login = gamecodeLogin;
+        result.password = gamecodePassword;
+        result.userId = gcObject.agentId;
         result.balance = result.currentValue - result.originalValue;
 
         return result;
@@ -25,11 +27,11 @@ function GamecodesCtrl(gamecode, password) {
         getObject: function(cb) {
             gc.getGamecodeByLogin(gamecodeLogin, function(err, data) {
                 if(err) {
-                     cb(err, null)
+                     cb(err, null);
                 }
 
                 if(data !== null && comparePasswords(gamecodePassword, data.password)) {
-                    cb(null, clearObject(data))
+                    cb(null, clearObject(data));
                 } else {
                     cb(null, null);
                 }

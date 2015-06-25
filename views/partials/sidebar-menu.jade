@@ -1,3 +1,16 @@
 .navbar-header
-   .ul
-      .li: a hello
+   if user
+      h3.text-center Hello,
+         =user.firstName
+
+   if gamecode
+      h3.text-center Current gamecode:
+        p.text-center.text-info=  gamecode.login
+
+      hr
+      p.text-center
+         a(href='/logout')
+            | [ logout ]
+
+
+
