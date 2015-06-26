@@ -21,7 +21,8 @@ router.get('/slot', middlewares.isAuth, middlewares.updateSessionData, function(
 });
 
 router.route('/algo')
-    .get(middlewares.isAuth, algo.getHandler);
+    .get(middlewares.isAuth, algo.getHandler)
+    .post(middlewares.isAuth, algo.postHandler);
 
 router.route('/current_user')
     .get(middlewares.isAuth, current_user.getHandler);

@@ -7,6 +7,7 @@ $(document).ready(function() {
 
         $('.gc-createdOn').text(new Date(changedPost.createdOn));
         $('.gc-currentValue').text(changedPost.currentValue);
+        $('[name="currentValue"]').val(changedPost.currentValue);
         $('.gc-originalValue').text(changedPost.originalValue);
         $('.gc-balance').text(changedPost.currentValue - changedPost.originalValue);
 

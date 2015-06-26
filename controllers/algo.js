@@ -1,5 +1,5 @@
 var slotAlgo = require("../run.js");
-var WinCtrl = require("./win");
+var WinModel = require("../models/win");
 
 function AlgoCtrl(result) {
     this.result = result;
@@ -7,20 +7,19 @@ function AlgoCtrl(result) {
     var winsArr = [];
 
     this.parseNumbersToArray = function() {
-        return result.substr(0, 34).split("\n").slice(0, -1); //last index equals to empty string, so cut it
+        return result.substr(0, 34).split("\n").slice(0, -1); //last index equals to an empty string, so cut it
     };
 
     this.parseWin = function() {
         if(result.length < 34) {
-            winsArr.push(new WinCtrl(''));
+            winsArr.push(new WinModel(''));
             return winsArr;
         }
 
         var wins = result.substr(33).split("\n").slice(0, -1);
 
-
         wins.forEach(function(win) {
-            winsArr.push(new WinCtrl(win));
+            winsArr.push(new WinModel(win));
         });
 
         return winsArr;

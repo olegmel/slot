@@ -1,4 +1,4 @@
-function WinCtrl(winStr) {
+function WinModel(winStr) {
     this.winStr = winStr;
 
     this.winSymbol = +this.winStr.substr(11, 1)         || 0;
@@ -7,4 +7,4 @@ function WinCtrl(winStr) {
 
 }
 
-module.exports = WinCtrl;
+module.exports = WinModel;

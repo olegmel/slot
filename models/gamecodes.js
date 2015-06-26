@@ -9,7 +9,6 @@ function GamecodesModel() {
                     callback(null, snapshot.val()[gamecodeId]);
                     ref.off();
                 } else {
-                   // console.log(123);
                     callback(null, null);
                     ref.off();
                 }
@@ -17,6 +16,17 @@ function GamecodesModel() {
                 callback(errorObject, null);
                 console.log("The read failed: " + errorObject.code);
             });
+        },
+
+        updateGamecode: function(gamecodeId, updates) {
+            var gamecodeRef = new Firebase("https://havana.firebaseio.com/Gamecodes/" + gamecodeId);
+
+            try {
+                console.log('we are updating');
+                return gamecodeRef.update(updates);
+            } catch(err) {
+                throw err;
+            }
         }
     };
 }

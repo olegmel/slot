@@ -36,6 +36,10 @@ function GamecodesCtrl(gamecode, password) {
                     cb(null, null);
                 }
             });
+        },
+
+        updateObject: function(updates) {
+            return gc.updateGamecode(gamecodeLogin, updates);
         }
     };
 }
